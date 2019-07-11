@@ -7,3 +7,10 @@
     {% endif %}
   {% endunless %}
 {% endfor %}
+{% for page in site.categories %}
+	{% if page.title %}
+	  <li class='c-nav__item' role='presentation'>
+	    <a class='c-nav__link' href='{{ page.url | prepend: site.baseurl }}'>{{ page.title }}</a>
+	  </li>
+	{% endif %}
+{% endfor %}
