@@ -1,11 +1,10 @@
 ---
 layout: post
-title: Start Blog!
-featured: true
+title: Second Story
 tags: [blog]
 categories: [dailylife]
 ---
 
-Blog Start
+second story about blog
 
 Hello World!
