@@ -1,9 +1,8 @@
 ---
 layout: post
 title: Access main program. Access main security. Access main program grid
-tags: [frontpage, jekyll, blog]
-categories: [firstcategory]
-image: '/images/posts/image1.jpeg'
+tags: [type]
+categories: [old]
 ---
 
 First 동작 여부 홧인
