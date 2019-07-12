@@ -6,6 +6,6 @@ tags: [blog]
 categories: [dailylife]
 ---
 
-블로그 시작
+Blog Start
 
 Hello World!
