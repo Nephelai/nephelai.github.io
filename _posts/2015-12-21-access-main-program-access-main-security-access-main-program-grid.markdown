@@ -2,7 +2,7 @@
 layout: post
 title: Access main program. Access main security. Access main program grid
 tags: [frontpage, jekyll, blog]
-categories: [first]
+categories: [firstcategory]
 image: '/images/posts/image1.jpeg'
 ---
 
