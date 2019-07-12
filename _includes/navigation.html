@@ -6,11 +6,15 @@
           <a class='c-nav__link' href='{{ page.url | prepend: site.baseurl }}'>{{ page.title }}</a>
         </li>
       {% endif %}
-      {% if page.layout == "category" %}
-        <li class='c-nav__item' role='presentation'>
-          <a class='c-nav__link' href='{{ page.url | prepend: site.baseurl }}'>{{ page.title }}</a>
-        </li>
-      {% endif %}
     {% endif %}
   {% endunless %}
+{% endfor %}
+{% for page in site.pages %}
+	{% if page.title != null %}
+    {% if page.layout == "category" %}
+  	  <li class='c-nav__item' role='presentation'>
+  	    <a class='c-nav__link' href='{{ page.url | prepend: site.baseurl }}'>{{ page.title }}</a>
+  	  </li>
+    {% endif %}
+	{% endif %}
 {% endfor %}

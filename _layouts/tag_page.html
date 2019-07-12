@@ -7,7 +7,7 @@ title: Tags
 
   <div class='o-grid'>
     <div class='o-grid__col'>
-      <h4>{{ page.tag }}</h4>
+      <h4>#{{ page.tag }}</h4>
     </div>
   </div>
   {% if site.tags[page.tag] %}
@@ -16,13 +16,7 @@ title: Tags
         {% include post-card.liquid %}
       {% endfor %}
     </div>
-
-    <div class='o-grid'>
-      {% include pagination.html %}
-    </div>
   {% else %}
     <p>There are no posts for this tag.</p>
   {% endif %}
-
- 
 </div>
