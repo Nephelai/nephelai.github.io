@@ -1,5 +1,6 @@
 ---
 layout: tag_page
-title: first
+tag: firstpage
+title: firstpage
 ---
 

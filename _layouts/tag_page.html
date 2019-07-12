@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Tags
 ---
 
 <div class='o-wrapper'>
@@ -9,14 +10,19 @@ layout: default
       <h4>{{ page.tag }}</h4>
     </div>
   </div>
+  {% if site.tags[page.tag] %}
+    <div class='o-grid'>
+      {% for post in site.tags[page.tag] %}
+        {% include post-card.liquid %}
+      {% endfor %}
+    </div>
 
-  <div class='o-grid'>
-    {% for post in page.posts %}
-      {% include post-card.liquid %}
-    {% endfor %}
-  </div>
+    <div class='o-grid'>
+      {% include pagination.html %}
+    </div>
+  {% else %}
+    <p>There are no posts for this tag.</p>
+  {% endif %}
 
-  <div class='o-grid'>
-    {% include pagination.html %}
-  </div>
+ 
 </div>
