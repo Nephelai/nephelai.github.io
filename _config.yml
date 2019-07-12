@@ -29,6 +29,7 @@ gems:
 
 include:
   - _pages
+  - _posts
 
 exclude:
   - vendor
