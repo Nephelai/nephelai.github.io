@@ -1,4 +1,4 @@
 ---
-layout: tag_page
+layout: category
 title: firstpage
 ---
