@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 image: '/images/pages/about.jpeg'
 ---
 
