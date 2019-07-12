@@ -3,7 +3,7 @@ layout: post
 title: Start Blog!
 featured: true
 tags: [blog]
-categories: [daylife]
+categories: [dailylife]
 ---
 
 블로그 시작
