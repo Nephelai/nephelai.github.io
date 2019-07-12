@@ -1,6 +1,11 @@
 {% for page in site.pages %}
   {% unless page.name == '404.md' %}
     {% if page.title != null %}
+      {% if page.layout == "page" %}
+        <li class='c-nav__item' role='presentation'>
+          <a class='c-nav__link' href='{{ page.url | prepend: site.baseurl }}'>{{ page.title }}</a>
+        </li>
+      {% endif %}
       {% if page.layout == "category" %}
         <li class='c-nav__item' role='presentation'>
           <a class='c-nav__link' href='{{ page.url | prepend: site.baseurl }}'>{{ page.title }}</a>
