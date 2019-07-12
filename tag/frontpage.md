@@ -1,6 +1,6 @@
 ---
 layout: tag_page
-tag: firstpage
-title: firstpage
+tag: frontpage
+title: Posts tagged frontpage
 ---
 
