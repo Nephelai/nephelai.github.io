@@ -1,9 +1,8 @@
 ---
 layout: post
-title: ACID
+title: Transaction & ACID
 tags: [database, acid]
 categories: [InternshipLine]
-
 ---
 
 ## Tansaction
@@ -58,7 +57,25 @@ Commit 시 현재 상태를 영원히 보장됩니다.
 
 ### Consistency 보장
 
+Transaction에서 Consistency은 Transaction 수행 전, 후에 data model의 모든 제약조건(Primary Key, Foreign Key, Domain Constraints)을 만족하는 것을 통해 보장합니다.
 
+또한 Transcation의 일관성은 이벤터와 조건이 발생했을 때, Trigger를 통해 보장합니다.
+
+### Isolation 보장
+
+병행 Transaction에 대해서 먼저 알아야 합니다.
+
+#### 병행 처리 ( Concurrent Processing )
+
+Transaction에 정해진 시간을 할당해서 작업을 하다가 부여된 시간이 끝나면, 다른 Transaction을 실행하는 방식으로 CPU 병렬처리랑 비슷합니다.
+
+이렇게 여러 Transaction을 동시에 처리하다가 공통의 data를 다른 Transaction에 의해 방해 받을 수도 있습니다.
+
+이를 위해 Transaction의 Isolation은 보장되어야 합니다.
+
+이를 위해서 Shared_Lock과 Exclusive Lock을 이용합니다. 구체적인 방법은 
+
+[Isolation Level](https://nephelai.github.io/internshipline/2019/07/15/isolation-level/)을 참조하면 됩니다.
 
 ## 출처
 
