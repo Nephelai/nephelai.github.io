@@ -1,6 +1,6 @@
 ---
 layout: category
-title: Internship Line
+title: InternshipLine
 
 ---
 
