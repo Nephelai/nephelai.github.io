@@ -2,7 +2,7 @@
 layout: post
 title: GitFlow Strategy
 tags: [github]
-categories: [internship-line]
+categories: [InternshipLine]
 ---
 
 Git-flow 에는 5가지 종류의 branch가 존재합니. 항상 유지되는 Main branch(master, develop)과 일정 기간동안만 유지되는 Sub branch(feature, release, hotfix)가 있습니다.
