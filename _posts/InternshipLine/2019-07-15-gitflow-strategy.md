@@ -35,9 +35,7 @@ git-flow에서 branch는 개발 process의 각 단계가 독립적으로 진행�
 
 즉, 변화하는 프로젝트에 따라서 git branch를 전략적으로 구성해야 합니다.
 
-
-
-### 출처 
+## 출처 
 
 [우아한 형제들 - 기술 블로그](http://woowabros.github.io/experience/2017/10/30/baemin-mobile-git-branch-strategy.html)
 
