@@ -53,3 +53,8 @@ blocking 이므로 return이 늦어지고, async이므로 Caller는 Callee에 �
 
 하지만 Nonblocking-Async를 추구하다가 Blocking-Async로 동작하는 경우가 존재합니다. Non-Blocking의 방식을 쓰는 과정에서 하나라도 Blocking 방식으로 동작하는 함수가 존재하면 의도치 않게 Blocking-Async로 동작하게 되어 매우 비효율적으로 동작할 수 있습니다.
 
+
+
+## 출처
+
+[뒤태지존의 끄적거림](https://homoefficio.github.io/2017/02/19/Blocking-NonBlocking-Synchronous-Asynchronous/)
