@@ -11,7 +11,7 @@ Git-flow 에는 5가지 종류의 branch가 존재합니. 항상 유지되는 Ma
 * develop : 다음 출시 버전을 개발하는 branch
 * feature : 기능을 개발하는 branch
 * release : 이번 출시 버전을 준비하는 branch
-* hotfix : 출시 버전에서 발새한 bug를 수정하는 branch
+* hotfix : 출시 버전에서 발생한 bug를 수정하는 branch
 
 ![git-flow_overall_graph](https://nephelai.github.io/images/posts/git-flow_overall_graph.png)
 
