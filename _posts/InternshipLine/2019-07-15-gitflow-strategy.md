@@ -1,7 +1,7 @@
 ---
 layout: post
 title: GitFlow Strategy
-tags: [github]
+tags: [git]
 categories: [InternshipLine]
 ---
 
