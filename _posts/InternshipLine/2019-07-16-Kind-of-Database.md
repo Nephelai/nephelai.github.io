@@ -21,9 +21,10 @@ Database의 종류는 크게 4가지의 종류로 나눌 수 있습니다.
 #### 장점
 
 * 다양한 용도로 사용이 가능하고, 일반적으로 높은 성능을 보여주고 있습니다.(범용적 / 고성능)
-* 데이터의 일관성을 보증합니다.
+* 데이터의 일관성을 보증합니다. 무결성 유지
 * 정규화에 따른 갱신 비용 최소화
 * 복잡한 형태의 query가 가능하여 원하는 data를 추출할 수 있습니다. (join 등의 연상을 지원)
+* Scale-up에 유리 : 한 대의 머신을 중심으로 확장
 
 #### 단점
 
@@ -44,6 +45,7 @@ Mysql, Oracle, SQLite, PostgreSQL, MSSQL
 * Cloud Computing
 * 빠른 Read / Write 속도
 * 유연한 Data 모델링
+* Scale-out 에 유리 : 여러 대의 서버를 중심으로 확장
 
 #### 단점
 
@@ -62,9 +64,16 @@ Mysql, Oracle, SQLite, PostgreSQL, MSSQL
 * Big Table(Column 형)
   * 뛰어난 확장성, 검색에 유리합니다.
   * Hbase, Casandara
+* Graph 형
+
+예를 들어 SNS를 개발시에는 User, Feed, Comment 등의 다양한 data가 존재하고 data 간의 관계가 존재하기 때문에 SQL을 사용하면 보다 빠르게 데이터를 접근할 수 있습니다. 만약 이 내용을 NoSQL로 구현을 한다면, 모든 내용을 하나의 Document로 저장하면 되겠지만, 그렇게 될 경우 data의 중복이 엄청나기 때문에 올바르지 못합니다. 중복을 피하기 위해서 Key-Value로 저장하고 있다면 그 과정의 비용이 상당합니다.
+
+
+
+
 
 ## 출처 
 
 [DBMS - 데이터베이스 종류와 장/단점](https://ourcstory.tistory.com/30)
 
-[Medium - 조영하]([https://medium.com/@duddk1551/db-rdb-%EA%B4%80%EA%B3%84%ED%98%95%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%99%80-nosql-adbd21f6f9f1](https://medium.com/@duddk1551/db-rdb-관계형데이터베이스-와-nosql-adbd21f6f9f1))
+[Medium - 조영하](https://medium.com/@duddk1551/db-rdb-관계형데이터베이스-와-nosql-adbd21f6f9f1)
