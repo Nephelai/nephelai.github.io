@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Connection Pool
-tags: [DB]
+tags: [database]
 categories: [InternshipLine]
 ---
 
