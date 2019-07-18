@@ -27,3 +27,6 @@ categories: [InternshipLine]
 | 장애        | Read/Write가 여러 대의 서버에 분산되어 처리됨으로써 장애 발생 시 전면 장애의 가능성이 적다. | 한대의 서버에 부하가 집중되므로 장애 발생 시 장애 영향도가 크다. |
 | 주요 기술   | Sharding, Query-off Loading, Queue, In Memory Cache, NoSQL, Object Storage, Distributed Storage | 고성능 CPU, Memory 확장, SSD                                 |
 
+## 출처
+
+[islove8587님의 블로그](https://blog.naver.com/PostView.nhn?blogId=islove8587&logNo=220548900044&proxyReferer=https%3A%2F%2Fwww.google.com%2F)
