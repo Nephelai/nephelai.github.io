@@ -45,8 +45,6 @@ next()를 호출할 때 인수로 값을 지정하면 yield keyword가 있는 �
 * rejected : promise가 어떤 이유에서 못 지켜진 상태입니다.
 * settled : promise의 여부에 상관없이 일단 결론이 난 상태입니다.
 
-### Example
-
 
 
 ## 출처
