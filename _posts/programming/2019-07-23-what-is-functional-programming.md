@@ -72,9 +72,21 @@ code 조각이 필요로 하는 것과 유발할게 될 결과를 숨기지 말�
 
 역시나 FP언어에는 일급 함수(first-class function)가 있습니다. Lamda 함수 역시 Side-Effect를 회피하기 위해서 언어를 만들다보면 자연스럽게 얻어지는 것입니다. FP를 가능하게 하는 것이지 핵심요소가 아닙니다.
 
-
-
 함수형 언어(Functional Program Language, FP)
+
+### JavaScript는 함수형 프로그래밍 언어가 아닙니다.
+
+함수형 언어는 Side Effect를 제거할 수 있는 곳에서 제거를 돕고, 그럴 수 없는 곳에서는 control 할 수 있게 도와줍니다. JavaScript는 이 기준을 만족하지 않습니다. 
+
+가장 쉽게 찾아볼 수 있는 부분은 this입니다. this는 모든 함수의 숨겨진 입력입니다. 특히 this는 의미 변화가 자유롭습니다. 이런 부분을 함수형 관점에서 바라보면설계에 Side Effect가 쉽게 발생할 수 있습니다. 
+
+### 자바와 함수형 프로그래밍 언어가 Side Effect를 대하는 자세
+
+Java나 FP나 Side Effect나 Side Effect의 문제에 대한 응답하고, 문제를 인식하는 것은 같습니다. 하지만 반응이 다릅니다. **Java의 대답은 "Side Effect를 객체(Object)라는 경계에 가두어라"이지만, FP의 대답은 "Side Effect를 제거하라"입니다.**
+
+
+
+
 
 
 
