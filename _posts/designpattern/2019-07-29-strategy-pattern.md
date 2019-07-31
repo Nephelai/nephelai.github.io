@@ -111,7 +111,38 @@ public class Moving {
 }
 ```
 
+``` java
+public class Bus extends Moving { ... }
+```
 
+```java
+public class Train extends Moving{ ... }
+```
+
+### Train과 Bus 객체를 사용하는 Client를 구현합니다
+
+Train과 Bus의 객체를 생성한 후에 각 운송 수단이 어떤 방식으로 움직이는지 설정하기 위해서 setMovableStrategy() 를 호출합니다.
+
+``` java
+public class Client {
+    public static void main(String args[]) {
+        Moving train = new Train();
+        Moving bus = new Bus();
+        
+        train.setMovableStrategy(new TrackStrategy());
+        bus.setMovableStrategy(new RoadStrategy());
+        
+        train.move();
+        bus.move();
+        
+        // 선로를 따라 움직이는 bus 개발 시
+        bus.setMovableStrategy(new TrackStrategy());
+        bus.move();
+    }
+}
+```
+
+위의 예시와 같이 쉽게 유지 보수가 가능하다는 것을 볼 수 있습니다.
 
 
 
