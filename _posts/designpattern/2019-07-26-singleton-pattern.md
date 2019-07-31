@@ -3,8 +3,6 @@ layout: post
 title: Singleton Pattern
 tags: []
 categories: [designpattern]
-
-
 ---
 
 ## 정의
