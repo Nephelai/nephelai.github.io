@@ -1,10 +1,21 @@
 ---
 layout: page
-image: '/images/pages/about.jpeg'
+image: '/images/pages/main.jpg'
 ---
 
-You love Minimalism, and you also love writing, Type is designed for you. Type focus on showing your content in a clean and simple way, focus on images, typography, and white space.
+## 반갑습니다, 컴퓨터에 관한 모든 것이 궁금한 김재호입니다.
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+현재 대학생으로 개발자를 꿈꾸고 새로운 것을 배우는 것을 좋아합니다. 컴퓨터에만 제한된 것이 아닌 모든 이야기를 좋아하고 새로운 것을 환영합니다.
 
-Lorem ipsum dolor sit amet, vix ut case porro facilisis, alia possit neglegentur vis te. Has cu eirmod abhorreant, vel civibus efficiantur cu. Eu summo elitr vix, iusto putant maluisset per ut, ne etiam vivendum adipisci vel. Vis omnis tempor accusam ei, justo perpetua liberavisse cu qui. Saperet aliquando adipiscing ius ne, ne facer euripidis est. Pro mundi nostrum suavitate et.
+## Work Experience.
+
+2014. 03 인하대학교 입학
+2019. 01 Line 인턴 체험 (~ 2019. 02 )
+
+이런저런 모든 이야기를 좋아합니다.
+
+### 취미
+
+#### 배드민턴
+
+#### 
