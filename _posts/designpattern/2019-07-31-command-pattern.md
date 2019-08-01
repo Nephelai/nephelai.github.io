@@ -57,11 +57,87 @@ public class Client {
 
 위의 Lamp Class를 정의하고 OKGoogle Class에서 Lamp 객체를 참조하여야 합니다. 
 
+```java
+public class Heater {
+    public void powerOn() {
+        System.out.println("Heater On");
+    }
+}
+```
 
+```java
+public class Lamp {
+    public void turnOn() {
+        System.out.println("Lamp On");
+    }
+}
+```
 
+```java
+public class OKGoogle {
+    private static String[] modes = {"heater", "lamp"};
+    
+    private Heater heater;
+    private Lamp lamp;
+    private String mode;
+    
+    OKGoogle(Heater heater, Lamp lamp) {
+        this.heater = heater;
+        this.lamp = lamp;
+    }
+    public void setMode(int idx) {
+        this.mode = modes[idx];
+    }
+    public void talk() {
+        switch(this.mode) {
+            case "heater":
+                this.heater.powerOn();
+                break;
+            case "lamp":
+                this.lamp.turnOn();
+                break;
+        }
+    }
+}
+```
 
+```java
+public class Client {
+    public static void main(String args[]) {
+        Heater heater = new Heater();
+        Lamp lamp = new Lamp();
+        OKGoogle okGoogle = new OKGoogle(heater, lamp);
+        
+        // Lamp 켜짐
+        okGoogle.setMode(0);
+        okGoogle.talk();
+        
+        // Alarm 울림
+        okGoogle.setMode(1);
+        okGoogle.talk();
+    }
+}
+```
 
+OkGoogle에게 mode 설정을 통해 Mode 0이면 Heater를 키고, Mode 1이면 Lamp를 키도록 설정했습니다.
 
+OKGoogle은 기능이 많아질수록 객체 property는 더욱 늘어날 것이고, 기존의 talk() Method에서 분기가 늘어날 것입니다. 이 경우 OCP도 위배 됩니다.
+
+## Command Pattern 적용
+
+### Encapsulation 작업 수행
+
+먼저 OKGoogle이 할 수 있는 기능을 Class로 만들어서 각 기능들을 Encapsulation
+
+* HeaterOnCommand / LampOnCommand
+
+OKGoogle Class의 talk() Method에서 heater.powerOn(), lamp.turnOn() 같이 기능을 직접 호출하지 않고 Capsulation 된 Command Interface의 Method를 호출하도록 합니다.
+
+<그림 부터 작성 시작...>
+
+``` java
+
+```
 
 
 
