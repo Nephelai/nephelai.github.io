@@ -108,11 +108,11 @@ public class Client {
         Lamp lamp = new Lamp();
         OKGoogle okGoogle = new OKGoogle(heater, lamp);
         
-        // Lamp 켜짐
+        // Heater 켜짐
         okGoogle.setMode(0);
         okGoogle.talk();
         
-        // Alarm 울림
+        // Lamp 켜짐
         okGoogle.setMode(1);
         okGoogle.talk();
     }
@@ -133,35 +133,93 @@ OKGoogle은 기능이 많아질수록 객체 property는 더욱 늘어날 것이
 
 OKGoogle Class의 talk() Method에서 heater.powerOn(), lamp.turnOn() 같이 기능을 직접 호출하지 않고 Capsulation 된 Command Interface의 Method를 호출하도록 합니다.
 
-<그림 부터 작성 시작...>
+![Command Pattern](https://nephelai.github.io/images/posts/command_pattern.jpg)
+
+### Interface 정의
 
 ``` java
-
+public interfave Command() {
+    public void run();
+}
 ```
 
+### HeaterOnCommand Class와 .powerOn() Method 정의
 
+Heater를 켜는 명령을 Class화(Encapsulation)하고 Heater 키는 명령을 정의합니다.
 
+```java
+public class HeaterOnCommand implements Command {
+    private Heater heater;
+    public HeaterOnCommand(Heater heater) {
+        this.heater = heater;
+    }
+    public void run() {
+        heater.powerOn();
+    }
+}
+```
 
+```java
+public class Heater {
+    public void powerOn() {
+        System.out.println("Heater On");
+    }
+}
+```
 
+### LampOnCommand Class와 .turnOn() Method 정의
 
+마찬가지로 Lamp를 키는 명령을 Class화(Encapsulation)하고 Heater 키는 명령을 정의합니다.
 
+```java
+public class LampOnCommand implements Command {
+    private Lamp lamp;
+    public LampOnCommand(Lamp lamp) {
+        this.lamp = lamp;
+    }
+    public void run() {
+        lamp.turnOn();
+    }
+}
+```
 
+### OKGoogle Class의 talk() Method에서는 Command Interface의 run() Method 실행
 
+```java
+public class OKGoogle {
+    private Command command;
+    public void setCommand(Command command) {
+        this.command = command;
+    }
+    public void talk() {
+        command.run();
+    }
+}
+```
 
+### 마지막으로 OKGoogle을 사용하는 Client Class를 정의합니다.
 
+```java
+public class Client {
+    public static void main(String args[]) {
+        Heater heater = new Heater();
+        Lamp lamp = new Lamp();
+        
+        Command heaterOnCommand = new HeaterOnCommand(heater);
+        Command lampOnCommand = new LampOnCommand(lamp);
+        OKGoogle okGoogle = new OKGoogle();
+        
+        // Heater 켜짐
+        okGoogle.setCommand(heaterOnCommand);
+        okGoogle.talk();
+        // Lamp 켜짐
+        okGoogle.setCommand(lampOnCommand);
+        okGoogle.talk();
+    }
+}
+```
 
-
-
-
-
-
-
-
-
-
-
-
-
+만약 여기에 더욱 추가되는 내용이 있어도 쉽게 유지보수가 이루어질 수 있습니다.
 
 ## 출처
 
