@@ -73,6 +73,20 @@ Interface는 함수의 설계도만 있습니다. 그 이유는 함수의 구현
 
 따라서 Abstract Class와 Interface의 차이 및 존재 이유는 **외형적인 차이뿐만 아니라 상속이라는 개념과 다형성이라는 개념**을 알고 있는지에 대한 질문이 되기도 합니다.
 
+## 상속 VS 다형성
+
+### 상속(Ingeritance)
+
+상속은 **어떤 Class에서 더 특화된 버전의 Class를 위한 행동을 제공할 수 있게 합니다.**
+
+구체적으로 말하자면 상속은 상위 Class (Super Class)의 모든 것(State, Method) 을 하위 Class (Sub Class)가 지니고 있으며 그대로 사용할 수도 있고 원하면 Customizing을 할 수 있다는 점입니다.
+
+### 다형성(Ploymorphism)
+
+다형성은 **한 Method을 여러 방법으로 구현하고 상황에 따라 적당한 구현을 선택해서 쓸 수 있도록 해주는 기능을 제공합니다.**
+
+한 Method를 2가지의 버전으로 정의할 수 있으며 이때의 Method는 **Compile 시점 또는 Application이 실행될 때 결정됩니다.**
+
 
 
 ## 출처
@@ -83,3 +97,4 @@ Interface는 함수의 설계도만 있습니다. 그 이유는 함수의 구현
 
 [기본기를 쌓는 정마추어 코딩블로그](https://jeong-pro.tistory.com/82)
 
+[상속(Inheritance)과 다형성(Polymorphism)](http://loustler.io/languages/oop_inheritance_and_polymorphism/)
