@@ -17,6 +17,8 @@ categories: [interview]
 
 연결 리스트(Linked List)는 데이터를 저장할 때 데이터만 저장하는 것이 아니라 다음 데이터의 물리적 주소까지 같이 저장합니다. 특정 데이터에 접근할 때 Index로 바로 접근할 수 있었던 배열과 달리 첫 Node 부터 원하는 노드까지 Link를 따라가야 찾을 수 있기 때문에 배열에 비해 검색 속도는 떨어집니다. **하지만** 반대로 데이터를 삽입(Insert) / 삭제(Delete) 할때는 물리적 주소에 구애받지 않고 앞 / 뒤 Node의 주소만 끼워넣을 노드의 주소로 바꿔주면 되기 때문에 삽입 / 삭제는 배열보다 빠릅니다.
 
+![Array Vs Linked List](https://nephelai.github.io/images/posts/array_linkedlist.jpg)
+
 ## 출처
 
 [생활코딩](https://opentutorials.org/course/743/4736)
