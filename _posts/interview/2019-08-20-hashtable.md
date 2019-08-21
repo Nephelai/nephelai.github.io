@@ -16,6 +16,8 @@ categories: [interview]
 
 Hash function을 사용하여 key를 hash value로 mapping하고, 이 hash value를 index로 하여 데이터의 원래 값(value)와 함께 저장하는 자료구조를 **hash table**이라고 합니다. 이 때, 데이터가 저장되는 곳을 **bucket 또는 slot**이라고 합니다. 
 
+![Hash Table](https://nephelai.github.io/images/posts/hashtable.jpg)
+
 ## Hash Table의 장점
 
 ### 적은 Resource로 많은 데이터를 효율적으로 관리할 수 있습니다.
