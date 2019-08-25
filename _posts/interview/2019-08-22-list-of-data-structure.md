@@ -10,6 +10,44 @@ categories: [interview]
 
 ### Primitive types
 
+### Composite types or Non-Promitive types
+
+*Reference type*
+
+### Abstract data types
+
+Stack
+
+Queue
+
+## Linear Data Structures
+
+### Arrays
+
+### Lists
+
+## Trees
+
+### Binary Trees
+
+Binary Search Tree
+
+### B-Trees
+
+B-Tree
+
+B+Tree
+
+### Heaps
+
+Trie
+
+## Hash-Based Structures
+
+Hash Table
+
+## Graphs
+
 
 
 ## 출처
