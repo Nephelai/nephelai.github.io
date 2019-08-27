@@ -52,3 +52,17 @@ Transaction의 수행과 관련하여 주로 사용하는 연산에는 **작업 
 
 ### Transaction의 상태
 
+![Transcation States](https://nephelai.github.io/images/posts/transaction_states.jpg)
+
+Transaction은 다음과 같이 5가지의 상태를 지닙니다.
+
+* 활동 상태(Active) : **현재 수행중인 상태**
+* 부분 완료 상태(Partially Committed) : **Transaction의 마지막 연산이 실행된 직후의 상태**, Transaction의 모든 연산을 처리한 상태입니다. 모든 연산의 처리는 끝났지만 Transcation이 수행된 최종 결과를 DB에 아직 반영하지 않은 상태입니다.
+* 완료 상태(Commited) : **Transcation이 성공적으로 완료되어 commit 연산을 실행한 상태**, Transaction이 수행한 최종 결과를 DB에 반영하고 DB가 새로운 일관성을 지닌 상태가 되며 Transaction 종료됩니다.
+* 실패 상태(Failed) : HW나 SW문제, Transaction 내부의 오류 등 **여러 이유로 인해 장애가 발생하여 Transaction의 수행이 중단되 상태**, Transaction이 더 이상 정상적으로 수행될 수 없습니다.
+* 철회 상태(Aborted) : **Transaction을 수행하는 데 실패하여 rollback 연산을 실행한 상태**, 지금까지 실행한 Transaction의 연산을 모두 취소하고 Transaction이 수행되기 전의 DB 상태로 되돌리면서 Transaction이 종료됩니다.
+
+## Failure & Recovery
+
+
+
