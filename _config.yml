@@ -19,6 +19,10 @@ facebook:    ''
 markdown:  kramdown
 permalink: pretty
 paginate:  10
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
 
 sass:
   style: compressed

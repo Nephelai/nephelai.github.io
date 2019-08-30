@@ -42,11 +42,11 @@ Hash collision이 발생하면 다른 hash bucket에 해당 자료를 삽입하�
 
 일반적으로 Open Addressing 은 Separate Chaining 보다 느립니다. Open Addressing의 경우 Hash Bucket의 채운 값이 많아 질수록 Worst Case 발생 빈도가 더 높아지기 때문입니다. 하지만 Separate Chaining 방식의 경우 Hash Collision이 잘 발생하지 않도록 보조 Hash Function을 통해 조절할 수 있다면 Worst Case에 가까워지는 빈도를 줄일 수 있습니다. *Java 7의 HashMap은 Separate Chaining 방식을 사용하여 구현되어 있습니다.* 이 과정으로는 2가지의 구현 방식이 존재합니다.
 
-1. Using Linked List
+#### Using Linked List
 
 각각의 Bucket들을 Linked List로 만들어 Collision이 발생하면 해당 bucket의 list에 추가하는 방식입니다. Linked List의 특징을 그대로 이어받아 삽입과 삭제가 간단한 반면, 작은 데이터를 저장할 때, Linked List 자체의 데이터(meta data)가 overhead로 부담될 수 있습니다.
 
-2. Using Tree(Red-Black Tree)
+#### Using Tree(Red-Black Tree)
 
 기본적인 알고리즘은 Separate Chaining방식과 동일하며 Linked List 대신 Tree를 이용합니다. Tree를 기본적으로 Memory 사용량이 많기 때문에 데이터의 개수가 적다면 Linked List 사용하는 것이 옳습니다. 하지만 데이터가 많아지면 Tree가 더 효율적입니다.
 
