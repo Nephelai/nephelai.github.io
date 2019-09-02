@@ -124,5 +124,54 @@ Transaction이 수행되는 동안에는 데이터 변경 연산의 결과를 DB
 
 #### 미디어 회복 기법
 
+디스크의 경우 메모리보다 장애가 드물게 발생하지만 디스크 Header의 고장과 같은 원인으로 장애가 발생할 수 있습니다. **디스크에 발생할 수 있는 장애에 대비한 회복 기법**을 미디어 회복 기법이라고 합니다.
+
+미디어 회복 기법은 전체 DB의 내용을 일정 주기마다 다른 안전한 저장 장치에 복사해두는 덤프(dump)를 이용합니다. 디스크 장애가 발생하면 가장 최근에 복사해둔 dump를 이용해 장애 발생 이전의 일관된 DB 상태로 복구합니다. 그 다음 필요에 따라 로그 내용을 바탕으로 redo 연산을 수행합니다.
+
+전체 DB를 다른 저장 장치에 복사하는 방법은 비용이 많이 들고, 복사하는 동안 Transaction 수행을 중단해야 하므로 CPU 낭비가 많이 발생합니다.
+
 ## Concurrency Control
 
+DBMS의 경우 여러 사용자가 동시에 DB를 사용할 수 있도록 여러 Transaction이 동시에 수행될 수 있도록 *Concurrency*를 지원합니다. 실제로 Concurrency는 여러 Transaction이 번갈아 가면서 수행되는 *Interleaving* 방식으로 진행됩니다. 여러 Transaction이 서로 영향을 받지 않고 정화간 수행 결과를 얻을 수 있도록 제어가 이루어져야 합니다. 이렇게 Concurrency를 제어하는 것을 병행 제어(Concurrency Control)이라고 합니다.
+
+### Concurrency의 문제
+
+Control 없이 수행되는 병행 수행은 여러 문제를 야기합니다.
+
+#### 갱신 분실(Lost Update)
+
+**하나의 Transaction이 수행한 data 변경 연산의 결과를 다른 Transaction이 덮어써 Update 연산이 무효되는 것**입니다.
+
+#### 모순성(Inconsistency)
+
+**하나의 Transaction이 여러 개의 data 변경 연산을 실행할 때 일관성 없는 상태의 DB에서 데이터를 가져와 연산을 실행하므로써 모순된 결과가 발생하는 것**입니다. Transaction 내에서 분리되어 수행되는 경우, 만일 Transaction안에 연산이 여러 개일 경우 연산 하나 하고 Transaction이 다른 연산을 수행한다면 일관성 유지가 깨지는 현상이 발생합니다.
+
+#### 연쇄 복귀(Cascading Rollback)
+
+**Transaction이 완료되기 전에 장애가 발생하여 rollback 연산을 수행하면, Transaction이 장애 발생 전에 변경한 데이터를 가져가 변경 연산을 실행한 또 다른 Transaction에도 rollback 연산을 연쇄적으로 수행하는 것**을 의미합니다. 즉, rollback 수행 시 이에 영향을 받는 다른 Transaction에서도 rollback이 수행되어야 합니다. 하지만 장애가 발생한 Transaction이 rollback 연산을 실행하기 전에 변경한 data를 가져가 사용한 다른 Transaction이 수행을 완료해버리면 rollback 연산을 수행할 수 없서져 문제가 발생합니다.
+
+### Transaction Schedule
+
+**Transaction에 포함되어 있는 연산들을 수행하는 순서**를 Transaction Schedule이라고 합니다. 이는 크게 3가지 방식으로 나누어 볼 수 있습니다.
+
+#### 직렬 스케줄 (Serial Schedule)
+
+**Interleaving 방식을 이용하지 않고 각 Transaction 별로 연산들을 순차적으로 실행**시키는 것입니다. 이 경우 모든 Transaction이 완료될 때까지 다른 Transaction이 방해받지 않고 독립적으로 수행됩니다. 따라서 직렬 스케줄에 따라 Transaction이 수행되는 경우 항상 모순이 없는 정확한 결과를 얻습니다.
+
+하지만 직렬 스케줄의 경우는 각각의 Transaction을 독립적으로 수행하기 때문에 비효율적이며 성능이 떨어집니다.
+
+#### 비직렬 스케줄(Non-Serial Schedule)
+
+**Interleaving 방식을 이용하여 Transaction을 병행해서 수행시키는 것**입니다. 비직렬 스케줄은 Transaction이 돌아가면서 연산들을 실행하기 때문에 하나의 Transaction이 완료되기 전에 다른 Transaction의 연산이 수행될 수 있습니다. 여러 Tansaction이 Concurrency를 발생할 수 있으므로 *갱신 분실, 모순성, 연쇄 복귀* 등의 문제를 발생할 수 있어 결과의 정확성을 보장할 수 없습니다.
+
+#### 직렬 가능 스케줄(Serializable Schedule)
+
+**직렬 스케줄에 따라 수행한 것과 같이 정확한 결과를 생성하는 비직렬 스케줄**입니다. 모든 비직렬 스케줄이 직렬 가능한 것은 아닙니다. 하지만 이는 InterLeaving 방식을 이용하여 여러 Transaction을 Concurrency 하게 수행하면서도 정확한 결과를 얻을 수 있습니다.
+
+직렬 가능 스케줄을 이용해 Transaction을 병행 수행을 하면 좋지만 이를 판별하는 일이 쉽지 않습니다. 다수의 Transaction을 대상으로 비직렬 스케줄을 찾아내는 것이 어려울 뿐만 아니라, 하나씩 수행하면서 직렬 스케줄과 같은 결과가 나오는지 비교해야하는 일이 힘들기 때문입니다. 따라서 대부분의 DBMS에서는 직렬 가능 스케줄인가를 검사하기 보다는 **직렬 가능성을 보장하는 병행 제어(Concurrency Control) 기법을 사용합니다.**
+
+### 병행 제어 기법
+
+**여러 Transaction을 병행 수행하면서도 정확한 결과를 얻을 수 있는 직렬 가능성을 보장 받기 위해서 사용**합니다. 기본 원리는 모든 Transaction이 따르면 직렬 가능성이 보장되는 나름의 규약(Policy)을 정의하고, Transaction들이 이 규약을 따르도록 하는 것입니다.
+
+ 
