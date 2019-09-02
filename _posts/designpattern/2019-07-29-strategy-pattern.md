@@ -144,28 +144,6 @@ public class Client {
 
 위의 예시와 같이 쉽게 유지 보수가 가능하다는 것을 볼 수 있습니다.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## 출처
 
 [디자인패턴 - 전략 패턴](https://victorydntmd.tistory.com/292?category=719467)
