@@ -229,29 +229,6 @@ public class Client {
 
 ![Observer Pattern](https://nephelai.github.io/images/posts/observer_pattern.jpg)
 
-
-
 ## 출처
 
 [Tistory Blog](https://victorydntmd.tistory.com/296?category=719467)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
