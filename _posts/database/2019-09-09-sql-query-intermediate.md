@@ -111,6 +111,8 @@ Relational Database를 구축하기 위해서 사용합니다. RDB의 기본은 
 
 하지만 JOIN을 이용하여 데이터의 중복을 막고, 데이터의 UPDATE시 변경 연산을 줄여 처리 속도를 향상시킬 수 있습니다.
 
+![SQL JOINS](https://nephelai.github.io/images/posts/SQL_JOINS.png)
+
 ### INNER JOIN
 
 JOIN의 Default로 `ON` 조건에 맞는 정보를 합쳐서 보여줍니다.
